@@ -1,6 +1,7 @@
 local keymap = require "keymappings.keymap"
 local default_keys = require "keymappings.preset.default"
 local core_keys = require "keymappings.preset.core"
+local lsp_keys = require "keymappings.preset.lsp"
 
 local mode = {
   normal = "n",
@@ -23,13 +24,12 @@ keymap.set_group(mode.insert, core_keys.compe.insert_mode)
 keymap.set_group(mode.s, core_keys.compe.s_mode)
 keymap.set_group(mode.normal, core_keys.telescope.normal_mode)
 
+-- Set lsp
+keymap.set_group(mode.normal, lsp_keys.normal_mode)
+
+-- Set leader
 if O.keys.leader_key == " " or O.keys.leader_key == "space" then
   vim.g.mapleader = " "
 else
   vim.g.mapleader = O.keys.leader_key
 end
-
--- navigate tab completion with <c-j> and <c-k>
--- runs conditionally
-vim.cmd 'inoremap <expr> <C-j> pumvisible() ? "\\<C-n>" : "\\<C-j>"'
-vim.cmd 'inoremap <expr> <C-k> pumvisible() ? "\\<C-p>" : "\\<C-k>"'

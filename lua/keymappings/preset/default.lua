@@ -21,6 +21,10 @@ keys.insert_mode["<A-Up>"] = { "<C-\\><C-N><C-w>h", opts.inoremap }
 keys.insert_mode["<A-Down>"] = { "<C-\\><C-N><C-w>j", opts.inoremap }
 keys.insert_mode["<A-Left>"] = { "<C-\\><C-N><C-w>k", opts.inoremap }
 keys.insert_mode["<A-Right>"] = { "<C-\\><C-N><C-w>l", opts.inoremap }
+-- navigate tab completion with <c-j> and <c-k>
+-- runs conditionally
+keys.insert_mode["<C-j>"] = { 'pumvisible() ? "\\<C-n>" : "\\<C-j>"', { noremap = true, expr = true } }
+keys.insert_mode["<C-k>"] = { 'pumvisible() ? "\\<C-p>" : "\\<C-k>"', { noremap = true, expr = true } }
 
 keys.normal_mode = {}
 -- Better window movement
