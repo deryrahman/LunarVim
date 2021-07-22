@@ -21,6 +21,7 @@ keymap.set_group(mode.term, default_keys.term_mode)
 -- Set core plugins specific keys
 keymap.set_group(mode.insert, core_keys.compe.insert_mode)
 keymap.set_group(mode.s, core_keys.compe.s_mode)
+keymap.set_group(mode.normal, core_keys.telescope.normal_mode)
 
 if O.keys.leader_key == " " or O.keys.leader_key == "space" then
   vim.g.mapleader = " "
