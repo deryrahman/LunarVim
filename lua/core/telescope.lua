@@ -90,7 +90,6 @@ M.setup = function()
     return
   end
   telescope.setup(O.plugin.telescope)
-  vim.api.nvim_set_keymap("n", "<Leader>f", ":Telescope find_files<CR>", { noremap = true, silent = true })
 end
 
 return M
