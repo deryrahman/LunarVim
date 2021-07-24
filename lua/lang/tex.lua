@@ -123,17 +123,17 @@ M.lsp = function()
   vim.g.vimtex_fold_enabled = 0
   vim.g.vimtex_quickfix_ignore_filters = O.lang.latex.ignore_errors
 
-  O.plugin.which_key.mappings["t"] = {
-    name = "+Latex",
-    c = { "<cmd>VimtexCompile<cr>", "Toggle Compilation Mode" },
-    f = { "<cmd>call vimtex#fzf#run()<cr>", "Fzf Find" },
-    i = { "<cmd>VimtexInfo<cr>", "Project Information" },
-    s = { "<cmd>VimtexStop<cr>", "Stop Project Compilation" },
-    t = { "<cmd>VimtexTocToggle<cr>", "Toggle Table Of Content" },
-    v = { "<cmd>VimtexView<cr>", "View PDF" },
-    b = { "<cmd>TexlabBuild<cr>", "Build with Texlab" },
-    p = { "<cmd>TexlabForward<cr>", "Preview with Texlab" },
-  }
+  -- O.plugin.which_key.mappings["t"] = {
+  --   name = "+Latex",
+  --   c = { "<cmd>VimtexCompile<cr>", "Toggle Compilation Mode" },
+  --   f = { "<cmd>call vimtex#fzf#run()<cr>", "Fzf Find" },
+  --   i = { "<cmd>VimtexInfo<cr>", "Project Information" },
+  --   s = { "<cmd>VimtexStop<cr>", "Stop Project Compilation" },
+  --   t = { "<cmd>VimtexTocToggle<cr>", "Toggle Table Of Content" },
+  --   v = { "<cmd>VimtexView<cr>", "View PDF" },
+  --   b = { "<cmd>TexlabBuild<cr>", "Build with Texlab" },
+  --   p = { "<cmd>TexlabForward<cr>", "Preview with Texlab" },
+  -- }
 
   -- Compile on initialization, cleanup on quit
   vim.api.nvim_exec(

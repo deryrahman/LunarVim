@@ -47,7 +47,6 @@ M.setup = function()
     "<cmd>lua require('core.terminal')._lazygit_toggle()<CR>",
     { noremap = true, silent = true }
   )
-  O.plugin.which_key.mappings["gg"] = "LazyGit"
   terminal.setup(O.plugin.terminal)
 end
 

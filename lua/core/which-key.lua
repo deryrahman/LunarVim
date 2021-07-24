@@ -61,6 +61,7 @@ M.config = function()
       ["/"] = { ":CommentToggle<CR>", "Comment" },
     },
     mappings = {
+      [";"] = { "<cmd>Dashboard<CR>", "Dashboard" },
       -- ["w"] = { "<cmd>w!<CR>", "Save" },
       -- ["q"] = { "<cmd>q!<CR>", "Quit" },
       ["/"] = { "<cmd>CommentToggle<CR>", "Comment" },
@@ -72,6 +73,30 @@ M.config = function()
         name = "Explorer",
         e = { "<cmd>NvimTreeToggle<CR>", "Explorer" },
         f = { "<cmd>NvimTreeFindFile<CR>", "Current File" },
+      },
+
+      b = {
+        name = "Buffers",
+        j = { "<cmd>BufferPick<cr>", "jump to buffer" },
+        f = { "<cmd>Telescope buffers<cr>", "Find buffer" },
+        w = { "<cmd>BufferWipeout<cr>", "wipeout buffer" },
+        e = {
+          "<cmd>BufferCloseAllButCurrent<cr>",
+          "close all but current buffer",
+        },
+        h = { "<cmd>BufferCloseBuffersLeft<cr>", "close all buffers to the left" },
+        l = {
+          "<cmd>BufferCloseBuffersRight<cr>",
+          "close all BufferLines to the right",
+        },
+        D = {
+          "<cmd>BufferOrderByDirectory<cr>",
+          "sort BufferLines automatically by directory",
+        },
+        L = {
+          "<cmd>BufferOrderByLanguage<cr>",
+          "sort BufferLines automatically by language",
+        },
       },
       -- p = {
       -- 	name = "Packer",
