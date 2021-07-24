@@ -163,6 +163,8 @@ M.config = function()
       -- 	name = "Treesitter",
       -- 	i = { ":TSConfigInfo<cr>", "Info" },
       -- },
+      g = "which_key_ignore",
+      w = "which_key_ignore",
     },
   }
 end
