@@ -158,22 +158,22 @@ table.insert(gls.left, {
 table.insert(gls.left, {
   FilePath = {
     provider = function()
-      path_div = function(path)
+      local path_div = function(path)
         if path == nil then
           return path
         end
         local paths = string.gmatch(path, "[^/]+")
 
-        s = {}
+        local s = {}
         for f in paths do
           table.insert(s, f)
         end
 
-        if #s <= 1 then
+        if #s <= 2 then
           return path
         end
 
-        return table.concat(s, "/", #s - 1, #s)
+        return "../" .. table.concat(s, "/", #s - 1, #s)
       end
 
       vim.cmd "let path = expand('%:p')"
