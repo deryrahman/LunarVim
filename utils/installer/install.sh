@@ -1,6 +1,7 @@
 #!/bin/sh
 #Set Variable to master is not set differently
 LVBRANCH="${LVBRANCH:-master}"
+LVGITUSER="${LVGITUSER:-ChristianChiarulli}"
 set -o nounset # error when referencing undefined variable
 set -o errexit # exit when command fails
 
@@ -108,7 +109,7 @@ cloneconfig() {
 		cp -r "$(pwd)" ~/.local/share/lunarvim/lvim
 		;;
 	*)
-		git clone --branch "$LVBRANCH" https://github.com/ChristianChiarulli/lunarvim.git ~/.local/share/lunarvim/lvim
+		git clone --branch "$LVBRANCH" "https://github.com/$LVGITUSER/lunarvim.git" ~/.local/share/lunarvim/lvim
 		;;
 	esac
 	mkdir -p "$HOME/.config/lvim"
