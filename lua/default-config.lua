@@ -126,6 +126,14 @@ O = {
 
   -- TODO: just using mappings (leader mappings)
   user_which_key = {},
+  user_keymappings = {
+    normal_mode = {},
+    insert_mode = {},
+    visual_mode = {},
+    visual_block_mode = {},
+    term_mode = {},
+    s_mode = {},
+  },
 
   user_plugins = {
     -- use lv-config.lua for this not put here

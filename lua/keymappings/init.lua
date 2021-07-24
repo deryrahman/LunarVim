@@ -33,3 +33,20 @@ if O.keys.leader_key == " " or O.keys.leader_key == "space" then
 else
   vim.g.mapleader = O.keys.leader_key
 end
+
+-- Set user keymappings
+for mode, keys in pairs(O.user_keymappings) do
+  if mode == "normal_mode" then
+    keymap.set_group(mode.normal, keys)
+  elseif mode == "insert_mode" then
+    keymap.set_group(mode.insert, keys)
+  elseif mode == "visual_mode" then
+    keymap.set_group(mode.visual, keys)
+  elseif mode == "visual_block_mode" then
+    keymap.set_group(mode.visual_block, keys)
+  elseif mode == "term_mode" then
+    keymap.set_group(mode.term, keys)
+  elseif mode == "s_mode" then
+    keymap.set_group(mode.s, keys)
+  end
+end
