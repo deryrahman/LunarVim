@@ -155,6 +155,35 @@ table.insert(gls.left, {
   },
 })
 
+table.insert(gls.left, {
+  FilePath = {
+    provider = function()
+      path_div = function(path)
+        if path == nil then
+          return path
+        end
+        local paths = string.gmatch(path, "[^/]+")
+
+        s = {}
+        for f in paths do
+          table.insert(s, f)
+        end
+
+        if #s <= 1 then
+          return path
+        end
+
+        return table.concat(s, "/", #s - 1, #s)
+      end
+
+      vim.cmd "let path = expand('%:p')"
+      local path = vim.api.nvim_get_var "path"
+      return path_div(path)
+    end,
+    highlight = { colors.grey, colors.alt_bg },
+  },
+})
+
 table.insert(gls.right, {
   DiagnosticError = {
     provider = "DiagnosticError",

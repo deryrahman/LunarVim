@@ -60,8 +60,8 @@ return {
 
   -- Snippets
 
-  { "hrsh7th/vim-vsnip", event = "InsertEnter" },
-  { "rafamadriz/friendly-snippets", event = "InsertEnter" },
+  -- { "hrsh7th/vim-vsnip", event = "InsertEnter" },
+  -- { "rafamadriz/friendly-snippets", event = "InsertEnter" },
 
   -- Treesitter
   {
