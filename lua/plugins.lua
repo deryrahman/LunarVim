@@ -16,13 +16,16 @@ return {
     end,
   },
 
-  { "nvim-lua/popup.nvim" },
-  { "nvim-lua/plenary.nvim" },
   { "tjdevries/astronauta.nvim" },
 
   -- Telescope
   {
     "nvim-telescope/telescope.nvim",
+    requires = {
+      { "nvim-lua/popup.nvim" },
+      { "nvim-lua/plenary.nvim" },
+      { "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
+    },
     config = function()
       require("core.telescope").setup()
       if O.plugin.telescope.on_config_done then
